@@ -42,37 +42,74 @@
   .ok-btn:hover { transform: scale(1.08); }
   .nda-btn { transition: background 0.25s ease; }
   .nda-btn:hover { background: #F2C230; }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 860px) {
+    .sec-pad { padding-left: 24px !important; padding-right: 24px !important; }
+    #projects.sec-pad { padding-top: 56px !important; }
+    #about.sec-pad { padding-top: 64px !important; padding-bottom: 56px !important; }
+    .grid-bg.sec-pad { padding-top: 64px !important; padding-bottom: 64px !important; }
+    #process.sec-pad { padding-top: 64px !important; padding-bottom: 64px !important; }
+    #kind-words.sec-pad { padding-bottom: 64px !important; }
+
+    .hero { padding: 20px 20px 48px !important; min-height: 0 !important; }
+    .decor-word { display: none !important; }
+    .nav-bar { flex-wrap: wrap; gap: 12px; }
+    .nav-links { gap: 6px !important; flex-wrap: wrap; justify-content: flex-end; }
+    .nav-links a { padding: 8px 12px !important; font-size: 13px !important; }
+    .hero-name { font-size: 15vw !important; min-height: 0 !important; white-space: normal !important; }
+    .hero-statement { font-size: 22px !important; }
+    .float-card { position: static !important; width: 100% !important; margin: 32px auto 0 !important; right: auto !important; top: auto !important; }
+
+    .grid-2, .about-grid, .cap-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+    .about-grid > div:first-child { order: 2; }
+    .about-grid > div:last-child { order: 1; }
+    .nda-box { flex-direction: column; align-items: flex-start !important; text-align: left; }
+    .nda-box a { align-self: flex-start; }
+    #stepsGrid { grid-template-columns: 1fr 1fr !important; }
+    #quotesGrid { grid-template-columns: 1fr !important; }
+    .process-svg { display: none !important; }
+
+    .footer-bar { flex-wrap: wrap; gap: 16px; }
+    .footer-nav { flex-wrap: wrap; gap: 12px !important; justify-content: center; width: 100%; order: 3; }
+    .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    .footer-cta { flex-wrap: wrap; }
+  }
+  @media (max-width: 520px) {
+    #stepsGrid { grid-template-columns: 1fr !important; }
+    .hero-name { font-size: 12vw !important; }
+  }
 </style>
 </head>
 <body>
 
 <!-- ============ HERO ============ -->
-<div class="dotted" style="position: relative; background-color: #F4EFE6; padding: 24px 56px 64px; overflow: hidden; min-height: 740px;">
-  <div style="position: absolute; left: 52px; top: 140px; font-family: 'Square Peg', cursive; font-size: 62px; color: rgba(30,27,22,0.14); transform: rotate(-8deg); white-space: nowrap;">service design</div>
-  <div style="position: absolute; left: 90px; top: 570px; font-family: 'Square Peg', cursive; font-size: 58px; color: rgba(30,27,22,0.13); transform: rotate(6deg); white-space: nowrap;">product strategy</div>
-  <div style="position: absolute; right: 150px; top: 150px; font-family: 'Square Peg', cursive; font-size: 56px; color: rgba(232,102,61,0.24); transform: rotate(5deg); white-space: nowrap;">ux research</div>
+<div class="dotted hero" style="position: relative; background-color: #F4EFE6; padding: 24px 56px 64px; overflow: hidden; min-height: 740px;">
+  <div class="decor-word" style="position: absolute; left: 52px; top: 140px; font-family: 'Square Peg', cursive; font-size: 62px; color: rgba(30,27,22,0.14); transform: rotate(-8deg); white-space: nowrap;">service design</div>
+  <div class="decor-word" style="position: absolute; left: 90px; top: 570px; font-family: 'Square Peg', cursive; font-size: 58px; color: rgba(30,27,22,0.13); transform: rotate(6deg); white-space: nowrap;">product strategy</div>
+  <div class="decor-word" style="position: absolute; right: 150px; top: 150px; font-family: 'Square Peg', cursive; font-size: 56px; color: rgba(232,102,61,0.24); transform: rotate(5deg); white-space: nowrap;">ux research</div>
 
-  <div style="display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 5;">
-    <div style="width: 44px; height: 44px; border: 2px solid #1E1B16; border-radius: 50%; overflow: hidden; background: #F4EFE6;"><img src="assets/avatar.png" alt="Kethleen Bruno avatar" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
-    <div style="display: flex; gap: 12px;">
+  <div class="nav-bar" style="display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 5;">
+    <div style="width: 44px; height: 44px; border: 2px solid #1E1B16; border-radius: 50%; overflow: hidden; background: #F4EFE6; flex: 0 0 auto;"><img src="assets/avatar.png" alt="Kethleen Bruno avatar" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+    <div class="nav-links" style="display: flex; gap: 12px;">
       <a href="#projects" style="background: rgba(30,27,22,0.06); padding: 10px 22px; border-radius: 999px; font-size: 15px; color: #1E1B16;">Projects</a>
       <a href="#about" style="background: rgba(30,27,22,0.06); padding: 10px 22px; border-radius: 999px; font-size: 15px; color: #1E1B16;">About</a>
       <a href="#process" style="background: rgba(30,27,22,0.06); padding: 10px 22px; border-radius: 999px; font-size: 15px; color: #1E1B16;">Approach</a>
-      <a href="mailto:kethleen.ux@gmail.com" style="background: #1E1B16; color: #F4EFE6; padding: 10px 22px; border-radius: 999px; font-size: 15px;">Let's connect</a>
+      <a href="/cdn-cgi/l/email-protection#8de6e8f9e5e1e8e8e3a3f8f5cdeae0ece4e1a3eee2e0" style="background: #1E1B16; color: #F4EFE6; padding: 10px 22px; border-radius: 999px; font-size: 15px;">Let's connect</a>
     </div>
   </div>
   <div style="text-align: center; margin-top: 60px; position: relative; z-index: 5;">
     <div style="display: inline-flex; align-items: center; gap: 10px; border: 1.5px solid rgba(30,27,22,0.3); padding: 8px 20px; border-radius: 999px; font-size: 14px; color: #55504A; background: #F4EFE6;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #7FBF7F;"></span> Open to new projects</div>
-    <div id="typedName" style="font-family: Anton, sans-serif; font-size: 92px; line-height: 1; color: #1E1B16; margin-top: 26px; min-height: 92px; white-space: nowrap;"><span id="typedText"></span><span style="display: inline-block; width: 7px; height: 76px; background: #E8663D; margin-left: 9px; vertical-align: baseline; animation: blink 1s step-start infinite;"></span></div>
+    <div id="typedName" class="hero-name" style="font-family: Anton, sans-serif; font-size: 92px; line-height: 1; color: #1E1B16; margin-top: 26px; min-height: 92px; white-space: nowrap;"><span id="typedText"></span><span style="display: inline-block; width: 7px; height: 76px; background: #E8663D; margin-left: 9px; vertical-align: baseline; animation: blink 1s step-start infinite;"></span></div>
     <div style="font-size: 20px; color: #55504A; margin-top: 16px;">UX Researcher &amp; Product Designer — Curitiba, BR</div>
-    <div style="font-size: 31px; line-height: 1.5; font-weight: 600; color: #1E1B16; margin: 40px auto 0; max-width: 800px;">Designing from the messy middle of services,<br>operations and <span style="position: relative; display: inline-block; padding: 0 4px;">user needs<svg viewBox="0 0 200 70" preserveAspectRatio="none" style="position: absolute; left: -10%; top: -32%; width: 120%; height: 164%; overflow: visible; pointer-events: none;"><path d="M100 8 C 168 4, 195 20, 193 37 C 191 57, 132 66, 84 62 C 32 58, 7 46, 9 30 C 11 13, 62 4, 118 7 C 158 9, 184 17, 189 30 C 193 42, 160 58, 110 60" fill="none" stroke="#E8663D" stroke-width="3.5" stroke-linecap="round" pathLength="1" style="stroke-dasharray: 1; stroke-dashoffset: 1; animation: drawIn 1.1s ease-out 1.6s forwards;"></path></svg></span>.</div>
+    <div class="hero-statement" style="font-size: 31px; line-height: 1.5; font-weight: 600; color: #1E1B16; margin: 40px auto 0; max-width: 800px;">Designing from the messy middle of services,<br>operations and <span style="position: relative; display: inline-block; padding: 0 4px;">user needs<svg viewBox="0 0 200 70" preserveAspectRatio="none" style="position: absolute; left: -10%; top: -32%; width: 120%; height: 164%; overflow: visible; pointer-events: none;"><path d="M100 8 C 168 4, 195 20, 193 37 C 191 57, 132 66, 84 62 C 32 58, 7 46, 9 30 C 11 13, 62 4, 118 7 C 158 9, 184 17, 189 30 C 193 42, 160 58, 110 60" fill="none" stroke="#E8663D" stroke-width="3.5" stroke-linecap="round" pathLength="1" style="stroke-dasharray: 1; stroke-dashoffset: 1; animation: drawIn 1.1s ease-out 1.6s forwards;"></path></svg></span>.</div>
     <a href="#projects" style="display: flex; flex-direction: column; align-items: center; gap: 2px; margin-top: 48px;">
       <div style="font-family: 'Square Peg', cursive; font-size: 40px; color: #1E1B16;">see my work</div>
       <svg viewBox="0 0 40 60" style="width: 26px; animation: bob 1.6s ease-in-out infinite;"><path d="M20 5 L 20 45 M6 32 L 20 48 L 34 32" fill="none" stroke="#E8663D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
     </a>
   </div>
 
-  <div style="position: absolute; right: 120px; top: 470px; width: 340px; background: #ECEAE4; border: 1px solid #B9B4A8; border-radius: 10px; box-shadow: 0 24px 50px rgba(30,27,22,0.3); z-index: 10; animation: floatySubtle 8s ease-in-out infinite; font-family: Archivo, sans-serif;">
+  <div class="float-card" style="position: absolute; right: 120px; top: 470px; width: 340px; background: #ECEAE4; border: 1px solid #B9B4A8; border-radius: 10px; box-shadow: 0 24px 50px rgba(30,27,22,0.3); z-index: 10; animation: floatySubtle 8s ease-in-out infinite; font-family: Archivo, sans-serif;">
     <div style="height: 26px; background: linear-gradient(#DFDCD3, #C9C5B9); border-radius: 9px 9px 0 0; display: flex; align-items: center; gap: 6px; padding: 0 10px;">
       <span style="width: 11px; height: 11px; border-radius: 50%; background: #E8663D; border: 1px solid rgba(0,0,0,0.15);"></span>
       <span style="width: 11px; height: 11px; border-radius: 50%; background: #F2C230; border: 1px solid rgba(0,0,0,0.15);"></span>
@@ -92,7 +129,7 @@
 </div>
 
 <!-- ============ PROJECTS ============ -->
-<div id="projects" class="grid-bg" style="position: relative; background-color: #F4EFE6; padding: 72px 56px 0; overflow: hidden;">
+<div id="projects" class="grid-bg sec-pad" style="position: relative; background-color: #F4EFE6; padding: 72px 56px 0; overflow: hidden;">
 
   <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 10px;">
     <div style="font-family: Anton, sans-serif; font-size: 64px; color: #1E1B16;">LATEST PROJECTS</div>
@@ -100,7 +137,7 @@
   </div>
   <div style="font-size: 18px; color: #55504A; max-width: 560px; margin-bottom: 44px;">A living document — updated as new projects wrap up and clear NDA review.</div>
 
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+  <div class="grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
     <a class="hover-lift" href="https://kethleen.framer.website/projects/turning-ux-expertise-into-a-clear-digital-offer" style="display: block; background: #FFFDF8; border: 1px solid rgba(30,27,22,0.12); border-radius: 20px; overflow: hidden;">
       <div style="height: 340px; overflow: hidden;">
         <img src="assets/zoeh-studio.png" alt="Zoeh Studio website on a laptop" style="width: 100%; height: 100%; object-fit: cover; display: block;">
@@ -129,13 +166,13 @@
     </a>
   </div>
 
-  <div style="margin-top: 32px; border: 1.5px dashed rgba(30,27,22,0.35); border-radius: 18px; padding: 28px 36px; display: flex; align-items: center; gap: 24px; background: rgba(255,253,248,0.6);">
+  <div class="nda-box" style="margin-top: 32px; border: 1.5px dashed rgba(30,27,22,0.35); border-radius: 18px; padding: 28px 36px; display: flex; align-items: center; gap: 24px; background: rgba(255,253,248,0.6);">
     <div style="width: 46px; height: 46px; border-radius: 50%; background: #1E1B16; color: #F2C230; display: flex; align-items: center; justify-content: center; font-size: 20px; flex: 0 0 auto;">🔒</div>
     <div style="flex: 1;">
       <div style="font-size: 20px; font-weight: 700; color: #1E1B16;">Additional work is protected by NDAs.</div>
       <div style="font-size: 16px; color: #55504A; margin-top: 6px; text-wrap: pretty;">I can't publish enterprise projects for ExxonMobil, Braskem, and other clients, but I'd be happy to walk you through the context, process, and outcomes in a live conversation.</div>
     </div>
-    <a class="nda-btn" href="mailto:kethleen.ux@gmail.com" style="border: 2px solid #1E1B16; color: #1E1B16; padding: 11px 26px; border-radius: 999px; font-size: 15px; font-weight: 600; white-space: nowrap;">Ask me about them</a>
+    <a class="nda-btn" href="/cdn-cgi/l/email-protection#422927362a2e27272c6c373a02252f232b2e6c212d2f" style="border: 2px solid #1E1B16; color: #1E1B16; padding: 11px 26px; border-radius: 999px; font-size: 15px; font-weight: 600; white-space: nowrap;">Ask me about them</a>
   </div>
 
   <div style="margin: 64px -56px 0; border-top: 1px solid rgba(30,27,22,0.12); background: #FFFDF8; padding: 34px 0 30px; white-space: nowrap; overflow: hidden;">
@@ -147,8 +184,8 @@
 </div>
 
 <!-- ============ ABOUT ============ -->
-<div id="about" class="dotted" style="background-color: #F4EFE6; color: #1E1B16; padding: 96px 56px 80px;">
-  <div style="display: grid; grid-template-columns: 1fr 400px; gap: 80px; align-items: start;">
+<div id="about" class="dotted sec-pad" style="background-color: #F4EFE6; color: #1E1B16; padding: 96px 56px 80px;">
+  <div class="about-grid" style="display: grid; grid-template-columns: 1fr 400px; gap: 80px; align-items: start;">
     <div>
       <div style="font-family: 'Square Peg', cursive; font-size: 44px; color: #E8663D; transform: rotate(-2deg); display: inline-block;">about me</div>
       <div style="font-family: Anton, sans-serif; font-size: 56px; line-height: 1.08; letter-spacing: 0.01em; margin-top: 10px;">WHAT I BRING THAT MOST RESEARCHERS DON'T<span style="color: #E8663D;">.</span></div>
@@ -173,8 +210,8 @@
 </div>
 
 <!-- ============ CAPABILITIES ============ -->
-<div class="grid-bg" style="background-color: #F4EFE6; padding: 96px 56px;">
-  <div style="display: grid; grid-template-columns: 1fr 620px; gap: 80px; align-items: start;">
+<div class="grid-bg sec-pad" style="background-color: #F4EFE6; padding: 96px 56px;">
+  <div class="cap-grid" style="display: grid; grid-template-columns: 1fr 620px; gap: 80px; align-items: start;">
     <div>
       <div style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #B0491F; margin-bottom: 14px;">RESEARCH-LED, OPERATIONALLY GROUNDED, OUTCOME-FOCUSED.</div>
       <div style="font-family: Anton, sans-serif; font-size: 56px; line-height: 1.08; color: #1E1B16;">CAPABILITIES THAT TURN COMPLEXITY INTO INTUITIVE EXPERIENCES</div>
@@ -217,8 +254,8 @@
 </div>
 
 <!-- ============ PROCESS ============ -->
-<div id="process" class="dotted" style="background-color: #F4EFE6; padding: 96px 56px; position: relative; overflow: hidden;">
-  <svg viewBox="0 0 760 260" style="position: absolute; right: 40px; top: 30px; width: 560px; opacity: 0.4;">
+<div id="process" class="dotted sec-pad" style="background-color: #F4EFE6; padding: 96px 56px; position: relative; overflow: hidden;">
+  <svg class="process-svg" viewBox="0 0 760 260" style="position: absolute; right: 40px; top: 30px; width: 560px; opacity: 0.4;">
     <path d="M50 190 C 70 110, 150 100, 140 170 C 130 240, 60 230, 80 165 C 98 108, 180 115, 168 180 C 158 238, 95 245, 112 185 C 126 138, 200 135, 195 188 C 190 230, 250 225, 285 200 C 320 178, 360 185, 400 192 C 460 202, 510 198, 555 190" fill="none" stroke="#1E1B16" stroke-width="3" stroke-linecap="round"></path>
     <path d="M555 190 C 583 186, 598 168, 601 143" fill="none" stroke="#1E1B16" stroke-width="3" stroke-linecap="round"></path>
     <path d="M601 143 C 588 132, 579 116, 579 98 C 579 66, 605 40, 638 40 C 671 40, 697 66, 697 98 C 697 116, 688 132, 675 143 C 668 149, 663 157, 663 166 L 613 166 C 613 157, 608 149, 601 143 Z" fill="none" stroke="#1E1B16" stroke-width="3.2" stroke-linejoin="round"></path>
@@ -234,7 +271,7 @@
 </div>
 
 <!-- ============ KIND WORDS ============ -->
-<div id="kind-words" class="grid-bg" style="background-color: #F4EFE6; padding: 0 56px 100px;">
+<div id="kind-words" class="grid-bg sec-pad" style="background-color: #F4EFE6; padding: 0 56px 100px;">
   <div style="display: flex; align-items: baseline; gap: 20px; margin-bottom: 44px;">
     <div style="font-family: Anton, sans-serif; font-size: 56px; color: #1E1B16;">KIND WORDS</div>
     <svg viewBox="0 0 200 40" style="width: 120px;"><path d="M10 28 Q 30 10 50 26 T 90 26 T 130 26 T 175 20" fill="none" stroke="#E8663D" stroke-width="4" stroke-linecap="round"></path></svg>
@@ -243,35 +280,35 @@
 </div>
 
 <!-- ============ FOOTER ============ -->
-<div class="dotted" style="background: #232019; color: #F4EFE6; padding: 44px 56px 32px; background-image: radial-gradient(rgba(244,239,230,0.06) 1px, transparent 1px); background-size: 26px 26px; position: relative; overflow: hidden;">
-  <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 28px; border-bottom: 1px solid rgba(244,239,230,0.15);">
+<div class="dotted sec-pad" style="background: #232019; color: #F4EFE6; padding: 44px 56px 32px; background-image: radial-gradient(rgba(244,239,230,0.06) 1px, transparent 1px); background-size: 26px 26px; position: relative; overflow: hidden;">
+  <div class="footer-bar" style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 28px; border-bottom: 1px solid rgba(244,239,230,0.15);">
     <div style="width: 44px; height: 44px; border: 2px solid #F4EFE6; border-radius: 50%; overflow: hidden;"><img src="assets/avatar.png" alt="Kethleen Bruno avatar" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
-    <div style="display: flex; gap: 28px; font-size: 15px; color: rgba(244,239,230,0.7);">
+    <div class="footer-nav" style="display: flex; gap: 28px; font-size: 15px; color: rgba(244,239,230,0.7);">
       <a href="#" style="color: rgba(244,239,230,0.7);">Home</a>
       <a href="#projects" style="color: rgba(244,239,230,0.7);">Projects</a>
       <a href="#about" style="color: rgba(244,239,230,0.7);">About</a>
       <a href="#process" style="color: rgba(244,239,230,0.7);">Approach</a>
       <a href="#kind-words" style="color: rgba(244,239,230,0.7);">Kind words</a>
     </div>
-    <a href="mailto:kethleen.ux@gmail.com" style="background: #E8663D; color: #FFF6EC; padding: 10px 24px; border-radius: 999px; font-size: 15px; font-weight: 600;">Let's connect</a>
+    <a href="/cdn-cgi/l/email-protection#abc0cedfc3c7cecec585ded3ebccc6cac2c785c8c4c6" style="background: #E8663D; color: #FFF6EC; padding: 10px 24px; border-radius: 999px; font-size: 15px; font-weight: 600;">Let's connect</a>
   </div>
   <div style="text-align: center; margin-top: 36px;">
     <div style="font-family: 'Square Peg', cursive; font-size: 34px; color: #F49B7A; transform: rotate(-2deg); display: inline-block;">let's improve</div>
     <div style="font-family: Anton, sans-serif; font-size: 72px; line-height: 1; margin-top: 4px;">DIGITAL JOURNEYS TOGETHER<span style="color: #E8663D;">.</span></div>
-    <div style="display: flex; justify-content: center; gap: 14px; margin-top: 32px;">
-      <a class="cta-btn" href="mailto:kethleen.ux@gmail.com" style="background: #E8663D; color: #FFF6EC; padding: 14px 32px; border-radius: 999px; font-size: 17px; font-weight: 700;">kethleen.ux@gmail.com</a>
+    <div class="footer-cta" style="display: flex; justify-content: center; gap: 14px; margin-top: 32px;">
+      <a class="cta-btn" href="/cdn-cgi/l/email-protection#3a515f4e52565f5f54144f427a5d575b535614595557" style="background: #E8663D; color: #FFF6EC; padding: 14px 32px; border-radius: 999px; font-size: 17px; font-weight: 700;"><span class="__cf_email__" data-cfemail="036866776b6f66666d2d767b43646e626a6f2d606c6e">[email&#160;protected]</span></a>
       <a class="cta-btn" href="https://www.linkedin.com/in/kethleenbruno/" style="border: 1.5px solid rgba(244,239,230,0.35); color: #F4EFE6; padding: 13px 28px; border-radius: 999px; font-size: 17px;">LinkedIn</a>
       <a class="cta-btn" href="https://wa.me/5541992210260" style="border: 1.5px solid rgba(244,239,230,0.35); color: #F4EFE6; padding: 13px 28px; border-radius: 999px; font-size: 17px;">WhatsApp</a>
     </div>
   </div>
-  <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: rgba(244,239,230,0.45);">
+  <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: rgba(244,239,230,0.45);">
     <div>© 2026 Kethleen Holthausen Bruno</div>
     <div style="font-family: 'Square Peg', cursive; font-size: 22px; color: rgba(244,155,122,0.7);">designed in the messy middle ✳</div>
     <div>Curitiba, BR — working worldwide</div>
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function () {
   // ---- typed name effect ----
   var full = "KETHLEEN BRUNO";
