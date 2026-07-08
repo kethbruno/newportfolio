@@ -319,16 +319,16 @@
     if (i < full.length) { typedEl.textContent = full.slice(0, i + 1); }
     i++;
   }, 130);
-
   // ---- data ----
-  var logos = [
-    { name: "ExxonMobil", src: "assets/exxonmobil-logo.png" },
-    { name: "Braskem", src: "assets/braskem-logo.png" },
-    { name: "Zoeh Studio", src: "assets/zoehstudio-logo.png" },
-    { name: "Blue Tree Hotels", src: "assets/bluetree-logo.png" },
-    { name: "VAIO", src: "assets/vaio-logo.png" },
-    { name: "Avenue Code", src: "assets/avenuecode-logo.png" }
-  ];
+var logos = [
+  { name: "ExxonMobil", src: "assets/exxonmobil-logo.png" },
+  { name: "Braskem", src: "assets/braskem-logo.png" },
+  { name: "Zoeh Studio", src: "assets/zoehstudio-logo.png" },
+  { name: "Blue Tree Hotels", src: "assets/bluetree-logo.png" },
+  { name: "VAIO", src: "assets/vaio-logo.png" },
+  { name: "Avenue Code", src: "assets/avenuecode-logo.png" },
+  { name: "Disney", src: "assets/disney-logo.png" }
+];
   var logosLoop = logos.concat(logos);
   var logoTrack = document.getElementById("logoTrack");
   logosLoop.forEach(function (l) {
