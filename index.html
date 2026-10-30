@@ -79,6 +79,53 @@
     #stepsGrid { grid-template-columns: 1fr !important; }
     .hero-name { font-size: 12vw !important; }
   }
+
+  /* ============ SELECTED PROJECTS CAROUSEL ============ */
+  .project-carousel-nav { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:18px; }
+  .project-counter { font:500 15px 'IBM Plex Mono',monospace; color:#1E1B16; }
+  .project-counter span:last-child { color:#8A8378; }
+  .project-arrows { display:flex; gap:10px; }
+  .project-arrow { width:46px; height:46px; background:#FFFDF8; color:#1E1B16; border:1.5px solid #1E1B16; border-radius:50%; font-size:22px; cursor:pointer; }
+  .project-arrow:not(:disabled):hover { background:#F2C230; }
+  .project-arrow:disabled { opacity:.3; cursor:default; }
+  .project-arrow:focus-visible, .project-card:focus-visible { outline:3px solid #B0491F; outline-offset:4px; }
+  .project-track { display:flex; gap:26px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; overscroll-behavior-x:contain; scrollbar-width:none; -ms-overflow-style:none; padding:4px 4px 18px; }
+  .project-track::-webkit-scrollbar { display:none; }
+  .project-card { flex:0 0 min(74%,650px); scroll-snap-align:start; min-width:0; display:flex; flex-direction:column; background:#FFFDF8; color:#1E1B16; border:1px solid rgba(30,27,22,.12); border-radius:20px; overflow:hidden; }
+  .project-cover { position:relative; display:flex; align-items:center; justify-content:center; height:325px; overflow:hidden; }
+  .cover-urbs { background:#E7E8E8; }
+  .cover-urbs img { width:100%; height:100%; object-fit:contain; padding:14px; }
+  .cover-amanda { background:linear-gradient(130deg,#D6C4A8,#F6F0E4); padding:30px 40px; }
+  .cover-rafa { background:linear-gradient(130deg,#33383B,#151515); padding:30px 40px; }
+  .preview-window { position:relative; width:100%; height:100%; border:5px solid #33322E; border-radius:10px 10px 4px 4px; overflow:hidden; box-shadow:0 17px 35px rgba(29,26,22,.25); }
+  .preview-menu { display:flex; align-items:center; justify-content:space-between; height:32px; padding:0 14px; background:#F5F1EB; font:500 9px 'IBM Plex Mono',monospace; letter-spacing:.03em; }
+  .preview-menu span:last-child { font-size:8px; }
+  .amanda-site { position:absolute; inset:32px 0 0; background:linear-gradient(90deg,rgba(23,19,16,.55),rgba(23,19,16,.08)),#C4A27B; overflow:hidden; }
+  .amanda-books { position:absolute; left:14%; width:75%; height:25%; background:repeating-linear-gradient(90deg,#314D73 0 13px,#296877 13px 26px,#46876E 26px 39px,#B6B35A 39px 52px,#D4B047 52px 65px,#D4833B 65px 78px,#B74732 78px 91px); opacity:.9; }
+  .amanda-books.a { top:8%; } .amanda-books.b { top:43%; }
+  .amanda-shelf { position:absolute; left:12%; width:80%; height:10px; background:#9A6E48; box-shadow:0 5px 9px #553b2670; }
+  .amanda-shelf.a { top:34%; } .amanda-shelf.b { top:69%; }
+  .amanda-preview-title { position:absolute; z-index:1; left:6%; bottom:10%; color:white; font:italic 25px/1.12 Georgia,serif; text-shadow:0 2px 7px #222; }
+  .rafa-window { border-color:#282828; box-shadow:0 17px 35px rgba(0,0,0,.45); }
+  .rafa-menu { background:#0A0A0A; color:white; }
+  .rafa-site { position:absolute; inset:32px 0 0; background:#090B0E; overflow:hidden; }
+  .rafa-site img { position:absolute; top:0; right:0; height:100%; width:56%; object-fit:cover; opacity:.76; }
+  .rafa-site:after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,#090B0E 24%,rgba(9,11,14,.88) 52%,transparent 90%); pointer-events:none; }
+  .rafa-preview-title { position:absolute; z-index:1; left:6%; top:25%; color:#FFF; font:700 23px/1.15 Archivo,sans-serif; }
+  .rafa-preview-title small { display:block; max-width:210px; font:400 9px/1.5 Archivo,sans-serif; margin-top:15px; color:#D8D8D8; }
+  .rafa-cta { display:inline-block; margin-top:14px; background:#A51031; border-radius:3px; font:600 9px Archivo,sans-serif; padding:9px 12px; }
+  .project-card-body { display:flex; flex:1; flex-direction:column; padding:25px 28px 28px; }
+  .project-meta { display:flex; align-items:center; justify-content:space-between; gap:12px; color:#8A8378; font:500 13px 'IBM Plex Mono',monospace; }
+  .project-year { background:#F2C230; color:#1E1B16; border-radius:999px; padding:3px 12px; }
+  .project-title { margin:17px 0 20px; font:600 26px/1.25 Archivo,sans-serif; }
+  .project-link { display:block; margin-top:auto; font-size:15px; font-weight:600; color:#E8663D; }
+  @media (max-width:860px) { .project-card { flex-basis:87%; } .project-cover { height:270px; } .cover-amanda,.cover-rafa { padding:18px; } }
+  @media (max-width:520px) {
+    .project-card { flex-basis:91%; } .project-cover { height:215px; } .project-card-body { padding:18px; } .project-title { font-size:20px; }
+    .cover-amanda,.cover-rafa { padding:12px; } .preview-menu { font-size:7px; padding:0 6px; } .preview-menu span:last-child { font-size:6px; }
+    .amanda-preview-title,.rafa-preview-title { font-size:16px; } .rafa-preview-title small { font-size:7px; margin-top:6px; } .rafa-cta { font-size:7px; padding:6px 8px; margin-top:7px; }
+  }
+  @media (prefers-reduced-motion:reduce) { .project-track { scroll-behavior:auto; } }
 </style>
 </head>
 <body>
@@ -134,33 +181,49 @@
     <div style="font-family: Anton, sans-serif; font-size: 64px; color: #1E1B16;">LATEST PROJECTS</div>
     <div style="font-family: 'Square Peg', cursive; font-size: 42px; color: #E8663D; transform: rotate(-3deg);">the ones I can show ↓</div>
   </div>
-  <div style="font-size: 18px; color: #55504A; max-width: 560px; margin-bottom: 44px;">A living document, updated as new projects wrap up and clear NDA review.</div>
+  <div style="font-size: 18px; color: #55504A; max-width: 560px; margin-bottom: 44px;">Independent concepts and real-world projects I can share publicly.</div>
 
-  <div class="grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
-    <a class="hover-lift" href="https://kethleen.framer.website/projects/turning-ux-expertise-into-a-clear-digital-offer" style="display: block; background: #FFFDF8; border: 1px solid rgba(30,27,22,0.12); border-radius: 20px; overflow: hidden;">
-      <div style="height: 340px; overflow: hidden;">
-        <img src="assets/zoeh-studio.png" alt="Zoeh Studio website on a laptop" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-      </div>
-      <div style="padding: 26px 28px 28px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8A8378;">Zoeh Studio</div>
-          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #1E1B16; background: #F2C230; padding: 3px 12px; border-radius: 999px;">2026</div>
-        </div>
-        <div style="font-size: 26px; font-weight: 600; line-height: 1.25; color: #1E1B16; text-wrap: pretty;">Turning UX expertise into a clear digital offer</div>
-        <div style="margin-top: 16px; font-size: 15px; font-weight: 600; color: #E8663D;">View project →</div>
+
+  <div class="project-carousel-nav">
+    <div class="project-counter" aria-live="polite"><span id="projectCurrent">01</span> <span>/ 03</span></div>
+    <div class="project-arrows">
+      <button id="projectPrev" class="project-arrow" type="button" aria-label="Previous project" aria-controls="projectTrack" disabled>&larr;</button>
+      <button id="projectNext" class="project-arrow" type="button" aria-label="Next project" aria-controls="projectTrack">&rarr;</button>
+    </div>
+  </div>
+  <div class="project-track" id="projectTrack" role="region" aria-roledescription="carousel" aria-label="Selected projects" tabindex="0">
+    <a class="project-card hover-lift" href="https://kethleen.framer.website/projects/making-everyday-transit-card-management-easier-to-navigate." target="_blank" rel="noopener noreferrer">
+      <div class="project-cover cover-urbs"><img src="assets/urbs.gif" loading="lazy" alt="URBS public transit card mobile redesign concept"></div>
+      <div class="project-card-body">
+        <div class="project-meta"><span>URBS · Mobile UX concept</span><span class="project-year">2026</span></div>
+        <div class="project-title">Making everyday transit card management easier to navigate</div>
+        <span class="project-link">View project →</span>
       </div>
     </a>
-    <a class="hover-lift" href="https://kethleen.framer.website/projects/making-everyday-transit-card-management-easier-to-navigate." style="display: block; background: #FFFDF8; border: 1px solid rgba(30,27,22,0.12); border-radius: 20px; overflow: hidden;">
-      <div style="height: 340px; overflow: hidden;">
-        <img src="assets/urbs.gif" alt="Urbs transit app screens" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-      </div>
-      <div style="padding: 26px 28px 28px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #8A8378;">URBS</div>
-          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #1E1B16; background: #F2C230; padding: 3px 12px; border-radius: 999px;">2026</div>
+    <a class="project-card hover-lift" href="https://kethleen.framer.website/projects/making-home-organization-feel-possible" target="_blank" rel="noopener noreferrer">
+      <div class="project-cover cover-amanda">
+        <div class="preview-window amanda-window" aria-hidden="true">
+          <div class="preview-menu"><span>AMANDA GALVÃO</span><span>SERVIÇOS &nbsp; O MÉTODO &nbsp; CONTATO</span></div>
+          <div class="amanda-site"><div class="amanda-books a"></div><div class="amanda-shelf a"></div><div class="amanda-books b"></div><div class="amanda-shelf b"></div><div class="amanda-preview-title">Sua casa não precisa ser perfeita.<br>Precisa funcionar pra você.</div></div>
         </div>
-        <div style="font-size: 26px; font-weight: 600; line-height: 1.25; color: #1E1B16; text-wrap: pretty;">Making everyday transit card management easier to navigate</div>
-        <div style="margin-top: 16px; font-size: 15px; font-weight: 600; color: #E8663D;">View project →</div>
+      </div>
+      <div class="project-card-body">
+        <div class="project-meta"><span>Amanda Galvão · Live website</span><span class="project-year">2026</span></div>
+        <div class="project-title">Making home organization feel possible</div>
+        <span class="project-link">View project →</span>
+      </div>
+    </a>
+    <a class="project-card hover-lift" href="https://kethleen.framer.website/projects/helping-a-filmmaker-turn-selected-work-into-a-stronger-digital-presence" target="_blank" rel="noopener noreferrer">
+      <div class="project-cover cover-rafa">
+        <div class="preview-window rafa-window" aria-hidden="true">
+          <div class="preview-menu rafa-menu"><span>RAFA BRUNO FILMS</span><span>HOME &nbsp; WORK &nbsp; SERVICES &nbsp; ABOUT</span></div>
+          <div class="rafa-site"><img src="https://rafabrunofilms.com/assets/rafa-camera.jpg" loading="lazy" alt=""><div class="rafa-preview-title">You've got the footage.<br>I'll make it worth watching.<small>Video editing for brands and creators.</small><span class="rafa-cta">Tell me about your project →</span></div></div>
+        </div>
+      </div>
+      <div class="project-card-body">
+        <div class="project-meta"><span>Rafa Bruno Films · Live website</span><span class="project-year">2026</span></div>
+        <div class="project-title">Helping a filmmaker turn his work into a stronger digital presence</div>
+        <span class="project-link">View project →</span>
       </div>
     </a>
   </div>
@@ -317,6 +380,43 @@
     if (i < full.length) { typedEl.textContent = full.slice(0, i + 1); }
     i++;
   }, 130);
+
+  // ---- selected projects carousel ----
+  (function () {
+    var track = document.getElementById("projectTrack");
+    var previous = document.getElementById("projectPrev");
+    var next = document.getElementById("projectNext");
+    var counter = document.getElementById("projectCurrent");
+    if (!track || !previous || !next || !counter) return;
+    var cards = Array.prototype.slice.call(track.querySelectorAll(".project-card"));
+    var current = 0;
+    function update() {
+      var nearest = 0, distance = Infinity;
+      cards.forEach(function (card, index) {
+        var gap = Math.abs((card.offsetLeft - cards[0].offsetLeft) - track.scrollLeft);
+        if (gap < distance) { distance = gap; nearest = index; }
+      });
+      current = nearest;
+      counter.textContent = String(current + 1).padStart(2, "0");
+      previous.disabled = current === 0;
+      next.disabled = current === cards.length - 1;
+    }
+    function go(index) {
+      var bounded = Math.max(0, Math.min(index, cards.length - 1));
+      var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      track.scrollTo({left: cards[bounded].offsetLeft - cards[0].offsetLeft, behavior:reduced ? "auto" : "smooth"});
+      current = bounded;
+    }
+    previous.addEventListener("click", function () { go(current - 1); });
+    next.addEventListener("click", function () { go(current + 1); });
+    track.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") { e.preventDefault(); go(current + 1); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); go(current - 1); }
+    });
+    track.addEventListener("scroll", update, {passive:true});
+    window.addEventListener("resize", update);
+    update();
+  })();
 
   // ---- data ----
   var logos = [
