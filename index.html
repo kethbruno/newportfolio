@@ -94,6 +94,7 @@
   .project-card { flex:0 0 min(74%,650px); scroll-snap-align:start; min-width:0; display:flex; flex-direction:column; background:#FFFDF8; color:#1E1B16; border:1px solid rgba(30,27,22,.12); border-radius:20px; overflow:hidden; }
   .project-cover { position:relative; display:flex; align-items:center; justify-content:center; height:325px; overflow:hidden; }
   .project-cover .project-mockup { width:100%; height:100%; display:block; object-fit:contain; }
+  .project-cover .project-video { width:100%; height:100%; display:block; object-fit:cover; pointer-events:none; }
   .cover-urbs { background:#E7E8E8; }
   .cover-urbs img { width:100%; height:100%; object-fit:contain; padding:14px; }
   .cover-amanda { background:#F1EFE9; padding:0; }
@@ -203,7 +204,10 @@
     </a>
     <a class="project-card hover-lift" href="https://kethleen.framer.website/projects/making-home-organization-feel-possible" target="_blank" rel="noopener noreferrer">
       <div class="project-cover cover-amanda">
-        <img class="project-mockup" src="assets/amanda-card-updated.avif" loading="lazy" decoding="async" alt="Amanda Galvão website shown on a desktop monitor">
+        <video class="project-video" autoplay muted loop playsinline preload="metadata" poster="assets/amanda-card-updated.avif" aria-label="Animated preview of the Amanda Galvão website">
+          <source src="assets/amanda-card.mp4" type="video/mp4">
+          <img src="assets/amanda-card-updated.avif" alt="Amanda Galvão website preview">
+        </video>
       </div>
       <div class="project-card-body">
         <div class="project-meta"><span>Amanda Galvão · Live website</span><span class="project-year">2026</span></div>
@@ -375,6 +379,12 @@
     if (i < full.length) { typedEl.textContent = full.slice(0, i + 1); }
     i++;
   }, 130);
+
+  // Respect reduced-motion preferences for the animated project preview.
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var amandaPreview = document.querySelector(".cover-amanda .project-video");
+    if (amandaPreview) { amandaPreview.pause(); amandaPreview.removeAttribute("autoplay"); }
+  }
 
   // ---- selected projects carousel ----
   (function () {
