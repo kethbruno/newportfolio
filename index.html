@@ -320,9 +320,10 @@
 
   // ---- data ----
   var logos = [
+    { name: "UST", src: "assets/ust-logo.svg" },
+    { name: "Zoeh Studio", src: "assets/zoehstudio-logo.png" },
     { name: "ExxonMobil", src: "assets/exxonmobil-logo.png" },
     { name: "Braskem", src: "assets/braskem-logo.png" },
-    { name: "Zoeh Studio", src: "assets/zoehstudio-logo.png" },
     { name: "Blue Tree Hotels", src: "assets/bluetree-logo.png" },
     { name: "VAIO", src: "assets/vaio-logo.png" },
     { name: "Avenue Code", src: "assets/avenuecode-logo.png" }
@@ -332,7 +333,8 @@
   logosLoop.forEach(function (l) {
     var span = document.createElement("span");
     span.style.cssText = "display:inline-flex;align-items:center;gap:72px;";
-    span.innerHTML = '<img src="' + l.src + '" alt="' + l.name + '" style="height:32px;width:auto;max-width:160px;object-fit:contain;filter:grayscale(1);opacity:0.55;">' +
+    var logoHeight = l.name === "UST" ? "44px" : "32px";
+    span.innerHTML = '<img src="' + l.src + '" alt="' + l.name + '" style="height:' + logoHeight + ';width:auto;max-width:160px;object-fit:contain;filter:grayscale(1);opacity:0.55;">' +
       '<span style="color:#D8D2C4;font-size:16px;">✳</span>';
     logoTrack.appendChild(span);
   });
